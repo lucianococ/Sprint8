@@ -9,8 +9,8 @@ export default new Vuex.Store({
   state: {
     starships: [],
     pages: '',
-    api: 'https://swapi.dev/api/starships/?page=',
-    api2: 'https://swapi.dev/api/starships/?page=',
+    api: 'https://swapi.py4e.com/api/starships/?page=',
+    api2: 'https://swapi.py4e.com/api/starships/?page=',
     peliculas: [],
     pelisAsignadas: [],
     people:[],
@@ -88,7 +88,7 @@ export default new Vuex.Store({
       commit ('SET_API', val)
     },
     getfilms({commit}) {
-      axios.get('https://swapi.dev/api/films/')
+      axios.get('https://swapi.py4e.com/api/films/')
       .then(response => {
         commit('SET_PELICULAS', response.data)
         
@@ -98,7 +98,7 @@ export default new Vuex.Store({
     
     getpeople({commit})
     {
-      var totales = 'https://swapi.dev/api/people'
+      var totales = 'https://swapi.py4e.com/api/people'
       axios.get(totales)
       .then(response => {
         commit( 'SET_TOTAL', response.data.count)
@@ -107,7 +107,7 @@ export default new Vuex.Store({
       
       var i = this.state.people.length
         do{
-          axios.get('https://swapi.dev/api/people/'+i)
+          axios.get('https://swapi.py4e.com/api/people/'+i)
           .then(response => {
               commit('SET_PEOPLE', response.data)
             

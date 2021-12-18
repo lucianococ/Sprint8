@@ -12,7 +12,9 @@
                 
               
                
-                <img :src="(`https://starwars-visualguide.com/assets/img/starship/${item.id}.jpg`)">
+                
+                <img :src="(`https://starwars-visualguide.com/assets/img/starships/${this.id}.jpg`)">
+
 
                
 
